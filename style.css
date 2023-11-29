@@ -1,0 +1,258 @@
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: poppins;
+}
+
+#map{
+    height: 100vh;
+    z-index: 20;
+}
+.wrapper{
+    display: flex;
+    align-items: start;
+    margin-top: 60px;
+    position: fixed;
+    left: 10px;
+    z-index:50;
+    height: 100vh;
+    
+    
+
+}
+
+aside{
+    background: rgba(126, 121, 121, 0.568);
+    color: white;
+    height: 700px;
+    width: 270px;
+    border-radius: 10px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    transition: height 0.5s;
+  
+}
+
+.hide aside {
+height: 110px;
+transition: height 0.5s;
+}
+.hide form,
+.hide ul {
+    display: none !important; 
+}
+
+aside:hover {
+    background: rgb(45, 44, 44);
+    border: 1px solid orangered;
+}
+
+aside h1{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    text-align: center;
+    font-family: 'Permanent Marker';
+    font-size: 33px;
+    letter-spacing: 6px;
+    background: rgb(45, 44, 44);
+    padding: 3px;
+    border-radius: 10px;
+    margin: 10px 0 20px ;
+
+}
+@media (max-width:768px){
+    .wrapper{
+        width: 100%;
+        left: 0;
+        z-index: 999;
+        height: auto;
+        max-height: 100vh;
+        margin-top: 0px;
+        justify-content:center;
+
+    }
+   
+aside {
+    width: 100%;
+    height: 10%;
+    z-index: 999;
+    background: rgb(53, 51, 51);
+    border-radius: 0;
+}
+
+}
+
+aside ul::-webkit-scrollbar {
+    background: none;
+    width: 6px;
+    direction: rtl;
+}
+
+aside ul::-webkit-scrollbar-thumb {
+    background: rgb(187, 185, 185);
+}
+
+form {
+    display: none;
+    flex-direction:column ;
+    gap: 20px;
+
+}
+
+form .field {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.field input,.field select {
+    padding: 6px;
+    border-radius: 6px;
+    font-size: 15px;
+    border: none;
+}
+.field input:focus{
+    outline: 1px solid orangered;
+}
+.buttons {
+    display: flex;
+    gap: 5px;
+
+}
+.buttons button {
+    width: 100%;
+    background: black;
+    color: white;
+    border-radius: 10px;
+    padding: 7px;
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+    transition: filter 0.3s;
+
+}
+.buttons button:hover{
+    filter: brightness(50%);
+    border: 1px solid orangered;
+}
+
+.buttons button:nth-child(2){
+    background: rgb(233, 228, 228);
+    color: black;
+}
+
+/* liste alanı */
+
+ul {
+    overflow: auto;
+    height: 100%;
+    margin-top: 20px;
+    padding-right: 5px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    
+}
+li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgb(70, 70, 70);
+    color: #ffff;
+    padding: 10px;
+    border: 1px solid orangered ;
+    border-radius: 5px;
+
+}
+li p:nth-child(1){
+    font-family: 'Permanent Marker';
+    letter-spacing: 3px;
+   font-size: large;
+}
+
+li span{
+    font-weight: bold;
+}
+
+li i {
+    cursor: pointer;
+    font-size: 25px;
+
+}
+li  i:hover {
+    filter: drop-shadow(0 0 10px rgb(105, 193, 228));
+
+}
+
+li i:nth-child(3):hover {
+    filter: drop-shadow(0 0 10px red);
+
+}
+/*  arrrow */
+#checkbox {
+    display: none;
+  }
+  
+  .toggle {
+    position: relative;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    transition-duration: 0.5s;
+  }
+  
+  .bars {
+    width: 100%;
+    height: 4px;
+    background-color: rgb(176, 92, 255);
+    border-radius: 4px;
+  }
+  
+  #bar2 {
+    transition-duration: 0.8s;
+  }
+  
+  #bar1,
+  #bar3 {
+    width: 70%;
+  }
+  
+  #checkbox:checked + .toggle .bars {
+    position: absolute;
+    transition-duration: 0.5s;
+  }
+  
+  #checkbox:checked + .toggle #bar2 {
+    transform: scaleX(0);
+    transition-duration: 0.5s;
+  }
+  
+  #checkbox:checked + .toggle #bar1 {
+    width: 100%;
+    transform: rotate(45deg);
+    transition-duration: 0.5s;
+  }
+  
+  #checkbox:checked + .toggle #bar3 {
+    width: 100%;
+    transform: rotate(-45deg);
+    transition-duration: 0.5s;
+  }
+  
+  #checkbox:checked + .toggle {
+    transition-duration: 0.5s;
+    transform: rotate(180deg);
+  }
